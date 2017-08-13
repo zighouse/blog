@@ -4,13 +4,12 @@ title: "用gimp和inkscape把图片转成矢量图"
 date: 2017-08-09 23:32:01 +08:00
 description: 结合使用gimp的path技巧和inkscape的trace技巧可以从图片创作矢量图。
 share: true
-tags: gimp inkscape 图像处理
+tags: 图像处理
 ---
 
 # 用gimp和inkscape把图片转成矢量图
 
-在 linux 中可以结合使用 gimp 和 inkscape 来实现
-从一幅图片中创作出一幅矢量图。
+在 linux 中可以结合使用 gimp 和 inkscape 来实现从一幅图片中创作出一幅矢量图。
 
 一个可行的思路是
  1. 在gimp中将图片进行降噪、滤波、平滑、边缘增强等处理，使得图片的轮廓鲜明，对比强烈。
