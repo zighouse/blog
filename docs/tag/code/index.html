@@ -1,0 +1,22 @@
+---
+layout: page
+---
+<div class="page-content wc-container">
+	<div class="post">
+		<h1>tag: code</h1>  
+		<ul>
+            {% for post in site.tags.code %}
+            <li>
+              <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
+              &nbsp; <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+		</ul>
+	</div>
+</div>
+
+<div class="post-footer">
+  <div class="column-full">
+    <h3><a href="{{ '/archive.html' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></h3>
+  </div>
+</div>
