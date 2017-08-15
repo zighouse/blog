@@ -10,7 +10,7 @@ tags: linux
 在使用的 ubuntu 16.04 默认使用的“宋体”字体，显示汉字像日本字，不舒服。 
 例如这个词：“准确”，在 console 中显示的汉字明显带着日本味。 
  
-![cnfont-fail]({{site.baseurl | prepend:site.url}}/images/cnfont-fail.png){:width=220px}
+![cnfont-fail]({{site.baseurl | prepend:site.url}}/images/cnfont-fail.png){:width="220px"}
  
 经尝试，使用 Noto Sans CJK SC 显示的汉字是正常的，一定是字体相关配置有问题。 
  
@@ -38,5 +38,5 @@ tags: linux
  
 然后，在 console 中就能得到纯正的中国味汉字了: 
  
-![cnfont-ok]({{site.baseurl | prepend:site.url}}/images/cnfont-ok.png){:width=220px}
+![cnfont-ok]({{site.baseurl | prepend:site.url}}/images/cnfont-ok.png){:width="220px"}
  
