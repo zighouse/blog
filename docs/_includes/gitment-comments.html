@@ -1,0 +1,17 @@
+{% if page.comments %}
+<div id="container"></div>
+<link rel="stylesheet" href="{{site.baseurl}}/css/gitment.css">
+<script src="{{site.baseurl}}/js/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: location.href,
+  owner: 'zighouse',
+  repo: 'blog',
+  oauth: {
+    client_id: 'cb5e5563f6f5cd938416',
+    client_secret: 'ba262e9272e5e47ace4c1be94d31abe9f0063eeb',
+  },
+})
+gitment.render('container')
+</script>
+{% endif %}
