@@ -3,7 +3,7 @@ layout: post
 title: "Hello world"
 date: 2017-08-08 23:48:32 +0800
 description: Hello world 第一篇博客
-tags: code
+tags: blog
 ---
 
 # Hello world!
