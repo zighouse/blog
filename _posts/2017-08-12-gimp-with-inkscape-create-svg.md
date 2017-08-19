@@ -4,7 +4,7 @@ title: "用gimp和inkscape把图片转成矢量图"
 date: 2017-08-12 23:32:01 +08:00
 description: 结合使用gimp的path技巧和inkscape的trace技巧可以从图片创作矢量图。
 share: true
-tags: 图像处理
+tags: image
 ---
 
 # 用gimp和inkscape把图片转成矢量图
