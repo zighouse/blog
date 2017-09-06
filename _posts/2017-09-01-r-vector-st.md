@@ -132,7 +132,7 @@ cor() 的功能：
     > x.t <- table(x.c)                      # 统计每个区间上出现的数据点的个数，即统计直方图
     > plot(x.r, cumsum(c(0,x.t)), type='b')  # 基于 cumsum() 绘制积累求和曲线
 
-![r-vector-cumsum]({{ site.baseurl | prepend:site.url }}/images/r-vector-cumsum.png){: .center-image }* cumsum 积累求和曲线*
+![r-vector-cumsum]({{ site.baseurl | prepend:site.url }}/images/r-vector-cumsum.png){: .center-image }*cumsum 积累求和曲线*
 
 `pnorm()` 正态分布的概率分布函数。可以用来对比一个数据的 ecdf() 曲线是否与正态
 分布的概率分布函数相接近，由此来直观地判断这个数据是否服务正态分布。类似的，R中
@@ -145,7 +145,7 @@ cor() 的功能：
 
 `qqnorm()`和`qqline()` 对于正态分布，可以使用 qqnorm() 来绘制 q-q 图，即按正态
 分布的分位点来标画数据的分位点，如果得到的点大致分布在 x=y 直线的附近，则直观地
-说明数据服从正态分布。qqline() 则
+说明数据服从正态分布。qqline() 则绘制当中的一条直线。
 
     > qqnorm(x)
     > qqline(x, lty=2, col=2)
