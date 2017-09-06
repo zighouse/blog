@@ -64,7 +64,7 @@ R 的数值计算能力很强，
     > idx <- 0:11
     > plot(idx ~ r, type='b')
 
-![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates.png){: .center-image } * aac-lc采样率 *
+![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates.png){: .center-image }* aac-lc采样率 *
 
 在 R 中最简单的模型是线性模型，对于一个向量的线性模型就是一条直线。
 可以使用 lm() 快速得到直线的拟合结果:
@@ -82,19 +82,19 @@ R 的数值计算能力很强，
 注意到表达式 idx ~ r，表示的是 idx 按变量 r 变化的一个线性模型，相当于 $ idx = a r + b $。
 上面的结果告诉我们，如果把这个函数理解成是直线，那么通过 lm() 求得的直线为
 
-$ idx = 9.8995347 - 0.0001134 * r + \epsilon $
+\( idx = 9.8995347 - 0.0001134 * r \)
 
 在图上画出这条直线的效果如下图:
 
     > plot(idx ~ r, type='b')
     > abline(f1, lty=2, col=2)
 
-![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates2.png){: .center-image } * aac-lc采样率的直线拟合 *
+![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates-2.png){: .center-image }* aac-lc采样率的直线拟合 *
 
 从这张图上来看，这条直线和原始的点拟合得不好。看来要换一个模型了。
 通过观察，感觉可以把这个函数设计为如下形式:
 
-$ f(x) = \frac{a}{x + b} + c $
+\( f(x) = \frac{a}{x + b} + c \)
 
 也就是函数中包含了一个分式、一个常数项。
 在 R 中使用 nls() 来拟合一个非线性模型。
@@ -129,7 +129,7 @@ $ f(x) = \frac{a}{x + b} + c $
     > plot(idx ~ x, type='b')
     > lines(x, predict(f2), lty=2, col=2)
 
-![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates3.png){: .center-image } * aac-lc采样率的非线性拟合 *
+![r-vector-srates]({{ site.baseurl | prepend:site.url }}/images/r-vector-srates-3.png){: .center-image }* aac-lc采样率的非线性拟合 *
 
 从图上可以看出拟合得很好。因为索引值需要的是整数，试着计算一下:
 
