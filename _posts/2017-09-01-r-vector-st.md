@@ -78,7 +78,7 @@ cor() 的功能：
     > plot(density(x, bw="SJ"))    # 绘制密度分布曲线
     > rug(jitter(x, amount=0.01))  # 在密度分布曲线下方绘制数据点
 
-![r-vector-density]({{ site.baseurl | prepend:site.url }}/images/r-vector-density.png){: .center-image }*此样本的密度分布*
+![r-vector-density]({{ site.baseurl | prepend:site.url }}/images/r-vector-density.png){: .center-image }*x的密度分布*
 
 `fivenum()` 可以得到向量的5值表示，5值分别是最小值、低分位点、中位点、高分位点、最大值。
 
@@ -93,19 +93,25 @@ cor() 的功能：
     -3.09983208 -0.65330947  0.02000248  0.70109797  3.07421686
 
 `summary()` 可以快速获得向量的整体印象，与quantile()类似，多一个平均值。
+在拿到一份未知数据时，常常使用 summary() 来获得整体印象，并且常常配合 boxplot() 来了解异常数据等。
 
     > summary(x)
          Min.   1st Qu.    Median      Mean   3rd Qu.      Max.
     -3.100000 -0.653300  0.020000  0.004602  0.701100  3.074000
+    > boxplot(x)
+
+![r-vector-boxplot]({{ site.baseurl | prepend:site.url }}/images/r-vector-box.png){: .center-image }*x的整体印象*
+
+从boxplot()图中可以直观地了解到在上端和下端都存在几个数据点离整体分布比较远，有可能是异常数据。
 
 `hist()` 直接绘制出向量的统计直方图，它的效果与绘制 cut() 的效果相似：
 
     > hist(x)
     > plot(cut(x, 20))
 
-![r-vector-hist]({{ site.baseurl | prepend:site.url }}/images/r-vector-hist.png){: .center-image }*此样本的统计直方图*
+![r-vector-hist]({{ site.baseurl | prepend:site.url }}/images/r-vector-hist.png){: .center-image }*x的统计直方图*
 
-![r-vector-cut]({{ site.baseurl | prepend:site.url }}/images/r-vector-cut.png){: .center-image }*此样本的cut图*
+![r-vector-cut]({{ site.baseurl | prepend:site.url }}/images/r-vector-cut.png){: .center-image }*x的cut图*
 
 
 ## 数据分布的进阶分析
@@ -115,7 +121,7 @@ cor() 的功能：
     > x.ecdf <- ecdf(x)
     > plot(x.ecdf)
 
-![r-vector-ecdf]({{ site.baseurl | prepend:site.url }}/images/r-vector-ecdf.png){: .center-image }*此样本的经验积累分布函数曲线*
+![r-vector-ecdf]({{ site.baseurl | prepend:site.url }}/images/r-vector-ecdf.png){: .center-image }*x的经验积累分布函数曲线*
 
 需要注意的是 ecdf() 得到的是一个数值函数。
 
@@ -133,6 +139,13 @@ cor() 的功能：
     > plot(x.r, cumsum(c(0,x.t)), type='b')  # 基于 cumsum() 绘制积累求和曲线
 
 ![r-vector-cumsum]({{ site.baseurl | prepend:site.url }}/images/r-vector-cumsum.png){: .center-image }*cumsum 积累求和曲线*
+
+也可以画出排序后的数据点关于序号的图像，它的形状和 ecdf() 关于对角线对称，一般
+用一个点来表示每个数据，这样就能看到数据的整体形态了，异常数据、离散情况等一目了然。
+
+    > plot(sort(x), pch='.')
+
+![r-vector-sorted-index]({{ site.baseurl | prepend:site.url }}/images/r-vector-sort-idx.png){: .center-image }*数据排序散点图*
 
 `pnorm()` 正态分布的概率分布函数。可以用来对比一个数据的 ecdf() 曲线是否与正态
 分布的概率分布函数相接近，由此来直观地判断这个数据是否服务正态分布。类似的，R中
